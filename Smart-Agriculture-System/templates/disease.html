@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Disease Detection — Smart Agriculture</title>
+<link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+<header><h1>🦠 Plant Disease Detection</h1><p>Upload a leaf image to detect plant diseases using CNN</p></header>
+<div class="container">
+  <a href="/" class="back">← Back to Home</a>
+  <div class="form-group">
+    <label>Upload Leaf Image (JPG / PNG)</label>
+    <input type="file" id="image" accept="image/*"/>
+  </div>
+  <button class="submit-btn" onclick="detect()">🔍 Detect Disease</button>
+  <div id="result" style="display:none" class="result">
+    <h3 id="disease-name"></h3>
+    <p id="treatment"></p>
+  </div>
+</div>
+<footer>Built by Sam Wesley S &nbsp;|&nbsp; Karunya Institute of Technology and Sciences</footer>
+<script>
+function detect() {
+  const file = document.getElementById('image').files[0];
+  if (!file) { alert('Please upload an image.'); return; }
+  const form = new FormData();
+  form.append('image', file);
+  fetch('/predict/disease', { method:'POST', body: form })
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById('disease-name').textContent = '🦠 ' + d.disease;
+      document.getElementById('treatment').textContent = '💊 Treatment: ' + d.treatment;
+      document.getElementById('result').style.display = 'block';
+    });
+}
+</script>
+</body>
+</html>

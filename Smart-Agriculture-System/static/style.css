@@ -1,0 +1,25 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #f0fdf4; color: #1a2e1a; min-height: 100vh; }
+header { background: linear-gradient(135deg, #14532d, #166534); color: white; text-align: center; padding: 40px 20px; }
+header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+header p { font-size: 1rem; opacity: 0.85; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; padding: 40px; max-width: 1100px; margin: 0 auto; }
+.card { background: white; border-radius: 16px; padding: 32px 24px; text-decoration: none; color: inherit; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.2s; border-top: 5px solid; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+.card.green { border-color: #22c55e; }
+.card.blue  { border-color: #3b82f6; }
+.card.orange{ border-color: #f97316; }
+.card .icon { font-size: 2.5rem; margin-bottom: 16px; }
+.card h2 { font-size: 1.2rem; margin-bottom: 10px; }
+.card p { font-size: 0.9rem; color: #555; line-height: 1.6; margin-bottom: 20px; }
+.btn { background: #14532d; color: white; padding: 10px 20px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: #374151; }
+.form-group input, .form-group select { width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 0.95rem; }
+.submit-btn { background: #14532d; color: white; border: none; padding: 14px 28px; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; width: 100%; margin-top: 8px; }
+.submit-btn:hover { background: #166534; }
+.result { background: #f0fdf4; border: 1px solid #22c55e; border-radius: 10px; padding: 20px; margin-top: 20px; text-align: center; }
+.result h3 { color: #14532d; font-size: 1.4rem; }
+.container { max-width: 600px; margin: 40px auto; background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.back { display: inline-block; margin-bottom: 20px; color: #14532d; text-decoration: none; font-weight: 600; }
+footer { text-align: center; padding: 24px; color: #6b7280; font-size: 0.85rem; margin-top: 40px; }
